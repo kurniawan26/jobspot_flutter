@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jobspot_flutter/screen/detailjob_screen.dart';
 
 class RecentJobWidget extends StatelessWidget {
   const RecentJobWidget({Key? key}) : super(key: key);
@@ -15,69 +16,76 @@ class RecentJobWidget extends StatelessWidget {
         const SizedBox(
           height: 15,
         ),
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border.all(color: const Color(0xFFE5E5E5)),
-            borderRadius: BorderRadius.circular(15),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                const JobLabel(),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Row(
-                  children: [
-                    Text(
-                      '\$15K',
-                      style: TextStyle(
-                          color: Color(
-                            0xff524B6B,
+        GestureDetector(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return const DetailJob();
+            }));
+          },
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(color: const Color(0xFFE5E5E5)),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  const JobLabel(),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Row(
+                    children: [
+                      Text(
+                        '\$15K',
+                        style: TextStyle(
+                            color: Color(
+                              0xff524B6B,
+                            ),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      Text(
+                        '/Mo',
+                        style: TextStyle(
+                            color: Color(
+                              0xffAAA6B9,
+                            ),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Row(
+                        children: [
+                          Badge(
+                            text: "Senior Designer",
                           ),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    Text(
-                      '/Mo',
-                      style: TextStyle(
-                          color: Color(
-                            0xffAAA6B9,
+                          SizedBox(
+                            width: 5,
                           ),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Row(
-                      children: [
-                        Badge(
-                          text: "Senior Designer",
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Badge(
-                          text: "Full Time",
-                        ),
-                      ],
-                    ),
-                    Badge(
-                      text: "Apply Now",
-                      color: const Color(0xffFFD3A5),
-                      onPress: () {
-                        print('Apply');
-                      },
-                    ),
-                  ],
-                )
-              ],
+                          Badge(
+                            text: "Full Time",
+                          ),
+                        ],
+                      ),
+                      Badge(
+                        text: "Apply Now",
+                        color: const Color(0xffFFD3A5),
+                        onPress: () {
+                          print('Apply');
+                        },
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         )

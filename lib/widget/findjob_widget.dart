@@ -18,7 +18,6 @@ class FindJobWidget extends StatelessWidget {
           height: 15,
         ),
         SizedBox(
-          width: 400,
           height: 200,
           child: Row(
             children: [
