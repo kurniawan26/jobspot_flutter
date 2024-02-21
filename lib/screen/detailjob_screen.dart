@@ -47,15 +47,6 @@ class DetailJob extends StatelessWidget {
                       color: Colors.black54,
                     ),
                   ),
-                  // SizedBox(
-                  //   height: 200,
-                  //   child: GoogleMap(
-                  //     initialCameraPosition: CameraPosition(
-                  //       target: LatLng(37.7749, -122.4194),
-                  //       zoom: 12,
-                  //     ),
-                  //   ),
-                  // )
                 ],
               )
             ],
