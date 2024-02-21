@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:jobspot_flutter/screen/chat_screen.dart';
+import 'package:jobspot_flutter/screen/search_screen.dart';
+import 'package:jobspot_flutter/screen/setting_screen.dart';
 import 'package:jobspot_flutter/widget/banner_widget.dart';
 import 'package:jobspot_flutter/widget/findjob_widget.dart';
 import 'package:jobspot_flutter/widget/header_widget.dart';
@@ -17,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<NavigationItem> navItems = const [
     NavigationItem('Home', Icons.home),
     NavigationItem('Job', Icons.work),
-    NavigationItem('Profile', Icons.person),
+    NavigationItem('Chat', Icons.textsms),
     NavigationItem('Setting', Icons.settings),
   ];
 
@@ -29,13 +32,13 @@ class _HomeScreenState extends State<HomeScreen> {
         page = const HomePage();
         break;
       case 1:
-        page = const Placeholder();
+        page = const SearchScreen();
         break;
       case 2:
-        page = const Placeholder();
+        page = const ChatScreen();
         break;
       case 3:
-        page = const Placeholder();
+        page = const SettingScreen();
         break;
       default:
         throw UnimplementedError('No Widget for $selectedIndex');
